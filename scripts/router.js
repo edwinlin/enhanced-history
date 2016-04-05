@@ -3,6 +3,7 @@
     routes: {
       '': 'visits',
       'devices': 'devices',
+      'statistic': 'statistic',      
       'settings': 'settings',
       'search(/*query)': 'search',
       'visits(/:date)': 'visits'
@@ -127,7 +128,26 @@
           });
         }
       });
-    }
+    },
+    
+    statistic: function() {
+      this.app.selectNav('.statistic');
+
+      var cacheView = this.cache.view('statistic');
+      var view = cacheView.view;
+/*
+      delay(cacheView.transitioning, function() {
+        new Historian.Devices().fetch(function(devices) {
+          if(statistic) {
+            view.collection.reset(devices);
+          } else {
+            view.feature.set({supported: false});
+          }
+        });
+      });
+*/      
+    },    
+    
   });
 
   // if we need to transition to another view, delay the query until the

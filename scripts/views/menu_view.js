@@ -17,7 +17,7 @@
     },
 
     getI18nValues: function() {
-      return BH.Chrome.I18n.t(['settings_link', 'devices_link', 'search_link']);
+      return BH.Chrome.I18n.t(['settings_link', 'devices_link', 'search_link', 'statistic_link']);
     }
   });
 

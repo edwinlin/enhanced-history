@@ -5,12 +5,14 @@
     <meta name="twitter:widgets:csp" content="on">
 
     <title>Better History</title>
-
-    <!-- build:css styles/app.css -->
+ 
+     <!-- build:css styles/app.css -->
     <link rel='stylesheet' type='text/css' href='bower_components/chrome-bootstrap/chrome-bootstrap.css'/>
     <link rel='stylesheet' type='text/css' href='styles/app.css'/>
-    <link rel='stylesheet' type='text/css' href='styles/i18n.css'/>
+    <link rel='stylesheet' type='text/css' href='styles/i18n.css'/>    
     <!-- endbuild -->
+    <!-- Load the AJAX API -->
+    <script src="https://www.google.com/jsapi"></script>   
   </head>
   <body class="chrome-bootstrap">
     <div class="app"></div>
@@ -58,11 +60,13 @@
     <script src='scripts/views/visits_results_view.js'></script>
     <script src='scripts/views/timeline_view.js'></script>
     <script src='scripts/views/visit_view.js'></script>
+    <script src='scripts/views/statistic_view.js'></script>
     <script src='scripts/presenters/search_presenter.js'></script>
     <script src='scripts/presenters/search_history_presenter.js'></script>
     <script src='scripts/presenters/devices_presenter.js'></script>
     <script src='scripts/presenters/timeline_presenter.js'></script>
     <script src='scripts/presenters/visits_presenter.js'></script>
+    <script src='scripts/presenters/statistic_presenter.js'></script>    
     <script src='scripts/router.js'></script>
     <script src='scripts/initialize_extension.js'></script>
     <!-- endbuild -->

@@ -414,3 +414,39 @@
 body .hidden {
   display: none !important;
 }
+
+#nav {
+	float: right;
+}
+#settings {
+	float: left;
+	margin-top: -1px;
+	font-size: 12px;
+}
+#settings a {
+	font-weight: bold;
+}
+#settings a:hover {
+	text-decoration: underline;
+}
+#data {
+	margin-top: 10px;
+}
+#table_div {
+	margin-top: 15px;
+}
+.google-visualization-table, .google-visualization-table-table {
+	width:100%;
+}
+.active {
+	font-weight: bold !important;
+}
+#nodata {
+	display: none;
+	color: red;
+	font-weight: bold;
+}
+#nodata a {
+	text-decoration: underline;
+	color: red;
+}

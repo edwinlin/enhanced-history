@@ -8,7 +8,8 @@
       'click .clear_history': 'clickedClearHistory',
       'click .credits': 'clickedCredits',
       'click #search_by_domain': 'clickedSearchByDomain',
-      'click #search_by_selection': 'clickedSearchBySelection'
+      'click #search_by_selection': 'clickedSearchBySelection',
+      'click #use_24_hour_clock': 'clickedUse_24_hour_clock'
     },
 
     initialize: function() {
@@ -58,6 +59,7 @@
     populateFields: function() {
       this.$('#search_by_domain').prop('checked', this.model.get('searchByDomain'));
       this.$('#search_by_selection').prop('checked', this.model.get('searchBySelection'));
+      this.$('#use_24_hour_clock').prop('checked', this.model.get('use24HourClock'));
     },
 
     modelChanged: function() {
@@ -82,6 +84,11 @@
 
       backgroundPage.selectionContextMenu[method]();
     },
+    
+    clickedUse_24_hour_clock: function(ev) {
+      this.model.set({use24HourClock: $(ev.currentTarget).prop('checked')});
+      window.location.reload();
+    },
 
     clickedClearHistory: function(ev) {
       ev.preventDefault();
@@ -103,6 +110,7 @@
         'right_click_options_section_title',
         'search_by_text_selection_label',
         'search_by_domain_label',
+        'use_24_hour_clock_label',
         'feedback_section_title',
         'spread_the_word_section_title',
         'leave_a_review',

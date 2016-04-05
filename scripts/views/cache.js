@@ -17,6 +17,7 @@
       devices: 'devicesView',
       visits: 'visitsView',
       search: 'searchView',
+      statistic: 'statisticView',
       settings: 'settingsView'
     };
 
@@ -71,6 +72,17 @@
     return this.cache.search;
   };
 
+  Cache.prototype.statisticView = function() {
+    if(!this.cache.statistic) {
+      this.cache.statistic = new BH.Views.StatisticView({
+        collection: new Backbone.Collection()
+      });
+
+      insert(this.cache.statistic.render().el);
+    }
+
+    return this.cache.statistic;
+  };
 
   Cache.prototype.settingsView = function() {
     if(!this.cache.settings) {

@@ -118,6 +118,10 @@
     "message": "24-godzinny",
     "description": "24 hour time format, example: 14:00"
   },
+	"use_24_hour_clock_label":{
+    "message": "24-godzinny",
+    "description": "Label for check box to show hours as 24 hours"
+  },    
   "group_visits_by_domain_label": {
     "message": "grupuj wizyty według domen",
     "description": "Label for check box to group visits by domain"

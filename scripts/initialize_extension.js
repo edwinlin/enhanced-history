@@ -17,7 +17,8 @@
     Settings = Backbone.Model.extend({
       defaults: {
         searchBySelection: true,
-        searchByDomain: true
+        searchByDomain: true,
+        use24HourClock: false
       }
     });
 
