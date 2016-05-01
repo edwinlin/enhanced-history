@@ -4,7 +4,7 @@
     "description": "language identifier used by Chrome"
   },
   "manifest_name": {
-    "message": "Better History",
+    "message": "Enhanced History",
     "description": "Manifest name"
   },
   "manifest_browser_action_title": {
@@ -147,7 +147,7 @@
     "description": "label for the current version"
   },
   "credits_link": {
-    "message": "$open$Better History$close$ credits",
+    "message": "$open$Enhanced History$close$ credits",
     "description": "The link to credits",
     "placeholders": {
       "open": {
@@ -598,7 +598,7 @@
   },
 
   "credits_title": {
-    "message": "Better History Credits",
+    "message": "Enhanced History Credits",
     "description": "Title for credits modal"
   },
   "developed_by": {
@@ -712,7 +712,7 @@
     "description": "Heading to recruit translators"
   },
   "translation_instructions": {
-    "message": "Do you speak english and want to translate Better History into a new lanuage? Great! Just send an email to $link_open$ $email$ $link_close$",
+    "message": "Do you speak english and want to translate Enhanced History into a new lanuage? Great! Just send an email to $link_open$ $email$ $link_close$",
     "description": "Instructions on how to help translate",
     "placeholders": {
       "email": {
@@ -835,7 +835,7 @@
   },
 
   "twitter_template": {
-    "message": "Arunca un ochi pe Better History pentru Chrome!",
+    "message": "Arunca un ochi pe Enhanced History pentru Chrome!",
     "description": "Default message for Twitter sharing"
   },
   "twitter_language": {

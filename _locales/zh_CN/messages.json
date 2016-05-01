@@ -4,7 +4,7 @@
     "description": "language identifier used by Chrome"
   },
   "manifest_name": {
-    "message": "Better History",
+    "message": "Enhanced History",
     "description": "Manifest name"
   },
   "manifest_browser_action_title": {
@@ -151,7 +151,7 @@
     "description": "label for the current version"
   },
   "credits_link": {
-    "message": "$open$Better History$close$ 鸣谢",
+    "message": "$open$Enhanced History$close$ 鸣谢",
     "description": "The link to credits",
     "placeholders": {
       "open": {
@@ -602,7 +602,7 @@
   },
 
   "credits_title": {
-    "message": "Better History 鸣谢",
+    "message": "Enhanced History 鸣谢",
     "description": "Title for credits modal"
   },
   "developed_by": {
@@ -716,7 +716,7 @@
     "description": "Heading to recruit translators"
   },
   "translation_instructions": {
-    "message": "你会讲英语并且想把Better History翻译到一种新的语言？太棒了！请发Email到 $link_open$$email$$link_close$",
+    "message": "你会讲英语并且想把Enhanced History翻译到一种新的语言？太棒了！请发Email到 $link_open$$email$$link_close$",
     "description": "Instructions on how to help translate",
     "placeholders": {
       "email": {
@@ -839,7 +839,7 @@
   },
 
   "twitter_template": {
-    "message": "试用Chrome的扩展Better History，看看你错过了什么！",
+    "message": "试用Chrome的扩展Enhanced History，看看你错过了什么！",
     "description": "Default message for Twitter sharing"
   },
   "twitter_language": {

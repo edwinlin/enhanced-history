@@ -151,7 +151,7 @@
     "description": "label for the current version"
   },
   "credits_link": {
-    "message": "$open$Better History$close$ Благодарности",
+    "message": "$open$Enhanced History$close$ Благодарности",
     "description": "The link to credits",
     "placeholders": {
       "open": {

@@ -4,7 +4,7 @@
     "description": "language identifier used by Chrome"
   },
   "manifest_name": {
-    "message": "Better History",
+    "message": "Enhanced History",
     "description": "Manifest name"
   },
   "manifest_browser_action_title": {
@@ -147,7 +147,7 @@
     "description": "Link text to view the release announcement"
   },
   "credits_link": {
-    "message": "$open$Better History$close$ الإصدار الحالي",
+    "message": "$open$Enhanced History$close$ الإصدار الحالي",
     "description": "The link to credits",
     "placeholders": {
       "open": {
@@ -602,7 +602,7 @@
   },
 
   "credits_title": {
-    "message": "Better History الاعتمادات",
+    "message": "Enhanced History الاعتمادات",
     "description": "Title for credits modal"
   },
   "developed_by": {
@@ -839,7 +839,7 @@
   },
 
   "twitter_template": {
-    "message": "!لا يفوتك .Chrome على Better History",
+    "message": "!لا يفوتك .Chrome على Enhanced History",
     "description": "Default message for Twitter sharing"
   },
   "twitter_language": {
