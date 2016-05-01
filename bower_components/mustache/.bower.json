@@ -1,7 +1,6 @@
 {
-  "name": "Mustache.js",
+  "name": "mustache.js",
   "main": "mustache.js",
-  "version": "0.8.2",
   "homepage": "https://github.com/janl/mustache.js",
   "authors": [
     "mustache.js Authors <http://github.com/janl/mustache.js>"
@@ -23,13 +22,14 @@
     "**/.*",
     "test"
   ],
-  "_release": "0.8.2",
+  "version": "2.2.1",
+  "_release": "2.2.1",
   "_resolution": {
     "type": "version",
-    "tag": "0.8.2",
-    "commit": "c68b434eb438394d1b069e38ba9d582c8d1fd28f"
+    "tag": "v2.2.1",
+    "commit": "cd06b22dabdaeffe3e4c74ee02bd492a11bbb740"
   },
-  "_source": "git://github.com/janl/mustache.js.git",
-  "_target": "~0.8.2",
+  "_source": "https://github.com/janl/mustache.js.git",
+  "_target": ">=0.8.2",
   "_originalSource": "mustache"
 }

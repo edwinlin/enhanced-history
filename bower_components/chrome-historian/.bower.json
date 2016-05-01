@@ -33,7 +33,7 @@
     "tag": "v1.9.1",
     "commit": "42b4e8b6541bf842c3191fdaec71af7749643d53"
   },
-  "_source": "git://github.com/better-history/chrome-historian.git",
-  "_target": "~1.9.1",
+  "_source": "https://github.com/better-history/chrome-historian.git",
+  "_target": ">=1.9.1",
   "_originalSource": "chrome-historian"
 }
