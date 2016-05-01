@@ -12,7 +12,7 @@
     "description": "Manifest browser action title"
   },
   "manifest_description": {
-    "message": "A better look at your browsing history. The best searching, the sharpest interface, and the most useful filters - for your history.",
+    "message": "An enhanced look at your browsing history. The best searching, the sharpest interface, and the most useful filters - for your history. This is a fork of Better History without any browser hijacks added since the original developer sold the extension.",
     "description": "Manifest description"
   },
 
