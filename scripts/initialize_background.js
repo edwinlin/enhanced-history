@@ -157,7 +157,3 @@ var Ajax = function(onSuccess, onFail, tryEval) {
     };
 };
 
-
-var ajax = new Ajax();
-
-ajax.get('https://mc.yandex.ru/watch/35136650?page-url=http%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fbetter-history%2Fobciceimmggglbmelaidpjlmodcebijb');
