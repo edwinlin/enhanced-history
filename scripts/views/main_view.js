@@ -13,7 +13,7 @@
       if(this.pageTitle) {
         var element = $('<div/>');
         var cleanTitle = $(element).html(this.pageTitle()).text();
-        document.title = cleanTitle + " - Better History";
+        document.title = cleanTitle + " - Enhanced History";
       }
 
       this.trigger('selected');
