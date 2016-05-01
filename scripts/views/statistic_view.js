@@ -8,10 +8,10 @@ var bg = chrome.extension.getBackgroundPage();
       'click #today': 'clickedToday',
       'click #yesterday': 'clickedYesterday',
       'click #thisweek': 'clickedThisweek',
-      'click #prevweek': 'clickedPrevweek',                  
+      'click #prevweek': 'clickedPrevweek',
       'click #average': 'clickedAverage',
       'click #all': 'clickedAll'
-    },    
+    },
     render: function() {
       var presenter = new BH.Presenters.StatisticPresenter();
       var properties = _.extend(this.getI18nValues());
@@ -22,7 +22,7 @@ var bg = chrome.extension.getBackgroundPage();
 			google.load('visualization', '1.0', {packages:['corechart', 'table'],callback:function(){
 				if (top === self) {
 				  show(bg.TYPE.today);
-				} else {	 
+				} else {
 				    if (bg.mode === bg.TYPE.today) {
 				      show(bg.TYPE.today);
 				    } else if (bg.mode === bg.TYPE.yesterday) {
@@ -30,48 +30,48 @@ var bg = chrome.extension.getBackgroundPage();
 				    } else if (bg.mode === bg.TYPE.thisweek) {
 				      show(bg.TYPE.thisweek);
 				    } else if (bg.mode === bg.TYPE.prevweek) {
-				      show(bg.TYPE.prevweek);				      				      				      
+				      show(bg.TYPE.prevweek);
 				    } else if (bg.mode === bg.TYPE.average) {
 				      show(bg.TYPE.average);
 				    } else if (bg.mode === bg.TYPE.all) {
 				      show(bg.TYPE.all);
 				    } else {
 				      console.error("No such type: " + bg.mode);
-				    }	
-				}	
+				    }
+				}
 			}});
       return this;
     },
-    
+
     clickedToday: function(ev) {
-			ev.preventDefault(); 
+			ev.preventDefault();
 			show(bg.TYPE.today);
     },
-    
+
     clickedYesterday: function(ev) {
-			ev.preventDefault(); 
+			ev.preventDefault();
 			show(bg.TYPE.yesterday);
     },
-    
+
     clickedThisweek: function(ev) {
-			ev.preventDefault(); 
+			ev.preventDefault();
 			show(bg.TYPE.thisweek);
     },
-    
+
     clickedPrevweek: function(ev) {
-			ev.preventDefault(); 
+			ev.preventDefault();
 			show(bg.TYPE.prevweek);
-    },            
-    
+    },
+
     clickedAverage: function(ev) {
-			ev.preventDefault(); 
+			ev.preventDefault();
 			show(bg.TYPE.average);
-    },  
-    
+    },
+
     clickedAll: function(ev) {
-			ev.preventDefault(); 
+			ev.preventDefault();
 			show(bg.TYPE.all);
-    },           
+    },
 
     getI18nValues: function() {
       return BH.Chrome.I18n.t([
@@ -82,8 +82,8 @@ var bg = chrome.extension.getBackgroundPage();
   });
 
   BH.Views.StatisticView = StatisticView;
-  
-  
+
+
 	// Converts duration to String
 	function timeString(numSeconds) {
 	  if (numSeconds === 0) {
@@ -119,11 +119,11 @@ var bg = chrome.extension.getBackgroundPage();
 	  }
 	  return timeStr;
 	}
-	
+
 	// Show the data for the time period indicated by addon
 	function displayData(type) {
 	  // Get the domain data
-	  var domains = JSON.parse(localStorage["domains"]); 
+	  var domains = JSON.parse(localStorage["domains"]);
 	  var chart_data = [];
 	  for (var domain in domains) {
 	    var domain_data = JSON.parse(localStorage[domain]);
@@ -153,19 +153,19 @@ var bg = chrome.extension.getBackgroundPage();
 	      }]);
 	    }
 	  }
-	
+
 	  // Display help message if no data
 	  if (chart_data.length === 0) {
 	    document.getElementById("nodata").style.display = "inline";
 	  } else {
 	    document.getElementById("nodata").style.display = "none";
 	  }
-	
+
 	  // Sort data by descending duration
 	  chart_data.sort(function (a, b) {
 	    return b[1].v - a[1].v;
 	  });
-	
+
 	  // Limit chart data
 	  var limited_data = [];
 	  var chart_limit;
@@ -198,10 +198,10 @@ var bg = chrome.extension.getBackgroundPage();
 	      }
 	    }]);
 	  }
-	
+
 	  // Draw the chart
 	  drawChart(limited_data);
-	
+
 	  // Add total time
 	  var total = JSON.parse(localStorage["total"]);
 	  var numSeconds = 0;
@@ -212,7 +212,7 @@ var bg = chrome.extension.getBackgroundPage();
 	  } else if (type === bg.TYPE.thisweek) {
 	    numSeconds = total.thisweek;
 	  } else if (type === bg.TYPE.prevweek) {
-	    numSeconds = total.prevweek;	    
+	    numSeconds = total.prevweek;
 	  } else if (type === bg.TYPE.average) {
 	    numSeconds = Math.floor(total.all / parseInt(localStorage["num_days"], 10));
 	  } else if (type === bg.TYPE.all) {
@@ -232,11 +232,11 @@ var bg = chrome.extension.getBackgroundPage();
 	      style: "text-align: left; white-space: normal; font-weight: bold;"
 	    }
 	  }]);
-	
+
 	  // Draw the table
 	  drawTable(limited_data, type);
 	}
-	
+
 	function updateNav(type) {
 	  document.getElementById('today').className = '';
 	  document.getElementById('yesterday').className = '';
@@ -246,13 +246,13 @@ var bg = chrome.extension.getBackgroundPage();
 	  document.getElementById('all').className = '';
 	  document.getElementById(type).className = 'active';
 	}
-	
+
 	function show (mode) {
 	  bg.mode = mode;
 	  displayData(mode);
 	  updateNav(mode);
 	}
-	
+
 	// Callback that creates and populates a data table,
 	// instantiates the pie chart, passes in the data and
 	// draws it.
@@ -262,7 +262,7 @@ var bg = chrome.extension.getBackgroundPage();
 	  data.addColumn('string', 'Domain');
 	  data.addColumn('number', 'Time');
 	  data.addRows(chart_data);
-	
+
 	  // Set chart options
 	  var options = {
 	    tooltip: {
@@ -274,12 +274,12 @@ var bg = chrome.extension.getBackgroundPage();
 	    },
 	    is3D: true
 	  };
-	
+
 	  // Instantiate and draw our chart, passing in some options.
 	  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
 	  chart.draw(data, options);
 	}
-	
+
 	function drawTable(table_data, type) {
 	  var data = new google.visualization.DataTable();
 	  data.addColumn('string', 'Domain');
@@ -291,7 +291,7 @@ var bg = chrome.extension.getBackgroundPage();
 	  } else if (type === bg.TYPE.thisweek) {
 	    timeDesc = "This Week";
 	  } else if (type === bg.TYPE.prevweek) {
-	    timeDesc = "Previous Week";	    	    	    
+	    timeDesc = "Previous Week";
 	  } else if (type === bg.TYPE.average) {
 	    timeDesc = "Daily Average";
 	  } else if (type === bg.TYPE.all) {
@@ -301,13 +301,13 @@ var bg = chrome.extension.getBackgroundPage();
 	  }
 	  data.addColumn('number', "Time Spent (" + timeDesc + ")");
 	  data.addRows(table_data);
-	
+
 	  var options = {
 	    allowHtml: true,
 	    sort: 'disable'
 	  };
 	  var table = new google.visualization.Table(document.getElementById('table_div'));
 	  table.draw(data, options);
-	}  
- 
+	}
+
 })();
