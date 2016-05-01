@@ -6,7 +6,6 @@
             "bower_components/underscore/underscore-min.js",
             "scripts/namespace.js",
             "scripts/config.js",
-            "scripts/lib/ga.js",
             "scripts/lib/error_tracker.js",
             "scripts/lib/analytics_tracker.js",
             "scripts/chrome/page_context_menu.js",
@@ -28,7 +27,7 @@
     "chrome_url_overrides": {
         "history": "index.html"
     },
-    "content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com https://platform.twitter.com https://www.google.com https://apis.google.com; object-src 'self';",
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://platform.twitter.com https://www.google.com https://apis.google.com; object-src 'self';",
     "default_locale": "en",
     "description": "__MSG_manifest_description__",
     "icons": {

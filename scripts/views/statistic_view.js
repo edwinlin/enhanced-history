@@ -18,28 +18,29 @@ var bg = chrome.extension.getBackgroundPage();
       var template = BH.Lib.Template.fetch(this.template);
       var html = Mustache.to_html(template, properties);
       this.$el.append(html);
-			// Load the Visualization API and the piechart package.
-			google.load('visualization', '1.0', {packages:['corechart', 'table'],callback:function(){
-				if (top === self) {
-				  show(bg.TYPE.today);
-				} else {
-				    if (bg.mode === bg.TYPE.today) {
-				      show(bg.TYPE.today);
-				    } else if (bg.mode === bg.TYPE.yesterday) {
-				      show(bg.TYPE.yesterday);
-				    } else if (bg.mode === bg.TYPE.thisweek) {
-				      show(bg.TYPE.thisweek);
-				    } else if (bg.mode === bg.TYPE.prevweek) {
-				      show(bg.TYPE.prevweek);
-				    } else if (bg.mode === bg.TYPE.average) {
-				      show(bg.TYPE.average);
-				    } else if (bg.mode === bg.TYPE.all) {
-				      show(bg.TYPE.all);
-				    } else {
-				      console.error("No such type: " + bg.mode);
-				    }
-				}
-			}});
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {packages:['corechart', 'table'],callback:function(){
+          if (top === self) {
+	    show(bg.TYPE.today);
+          } else {
+	      if (bg.mode === bg.TYPE.today) {
+	        show(bg.TYPE.today);
+	      } else if (bg.mode === bg.TYPE.yesterday) {
+	        show(bg.TYPE.yesterday);
+	      } else if (bg.mode === bg.TYPE.thisweek) {
+	        show(bg.TYPE.thisweek);
+	      } else if (bg.mode === bg.TYPE.prevweek) {
+	        show(bg.TYPE.prevweek);
+	      } else if (bg.mode === bg.TYPE.average) {
+	        show(bg.TYPE.average);
+	      } else if (bg.mode === bg.TYPE.all) {
+	        show(bg.TYPE.all);
+	      } else {
+	        console.error("No such type: " + bg.mode);
+	      }
+          }
+	}});
       return this;
     },
 
@@ -257,6 +258,9 @@ var bg = chrome.extension.getBackgroundPage();
 	// instantiates the pie chart, passes in the data and
 	// draws it.
 	function drawChart(chart_data) {
+          if (!google || !google.visualization)
+            return;
+
 	  // Create the data table.
 	  var data = new google.visualization.DataTable();
 	  data.addColumn('string', 'Domain');
@@ -281,6 +285,10 @@ var bg = chrome.extension.getBackgroundPage();
 	}
 
 	function drawTable(table_data, type) {
+          var bg = chrome.extension.getbgPage();
+          if (!google || !google.visualization)
+            return;
+
 	  var data = new google.visualization.DataTable();
 	  data.addColumn('string', 'Domain');
 	  var timeDesc;
