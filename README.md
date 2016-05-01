@@ -1,5 +1,13 @@
-Better History for Chrome
-=================
+A note for the curious
+======================
+
+This is a fork `Better History`, which was sold by the original author and had hijack links added to it.
+All hijacks have been removed, and permissions restored.
+
+* Work is in progress to make this a **fully offline** extension to avoid such complications.
+
+Enhanced History for Chrome
+===========================
 
 Chrome is an excellent browser, but browsing your history kinda stinks.
 
