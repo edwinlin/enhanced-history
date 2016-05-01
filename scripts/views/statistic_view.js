@@ -14,9 +14,9 @@ var bg = chrome.extension.getBackgroundPage();
     },    
     render: function() {
       var presenter = new BH.Presenters.StatisticPresenter();
-      //var properties = _.extend(this.getI18nValues(), presenter.searchInfo());
+      var properties = _.extend(this.getI18nValues());
       var template = BH.Lib.Template.fetch(this.template);
-      var html = Mustache.to_html(template);
+      var html = Mustache.to_html(template, properties);
       this.$el.append(html);
 			// Load the Visualization API and the piechart package.
 			google.load('visualization', '1.0', {packages:['corechart', 'table'],callback:function(){
