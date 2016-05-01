@@ -44,8 +44,6 @@
         "keyword": "__MSG_history_title__"
     },
     "permissions": [
-        "http://*/*",
-        "https://*/*",
         "chrome://favicon/",
         "history",
         "tabs",
